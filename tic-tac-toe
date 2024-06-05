@@ -1,0 +1,49 @@
+def printboard(board):
+    print('*'*20)
+    for row in board:
+        print("    |".join(row))
+        print('-'*15)
+        print('*'*20)
+def isfull(board):
+    for row in board:
+        for col in row:
+            if col=='':
+                return False
+            else:
+                return True
+def check(board,p):
+    for row in board:
+        if row[0]==p and row[1]==p and row[2]==0:
+            return True
+    for i in range(3):
+        if board[0][i]==p and board[1][i]==p and board[2][i]:
+            return True
+    if board[0][0]==p and board[1][1]==p and board[2][2]==p:
+        return True
+    if board[0][2]==p and board[1][1]==p and board[2][0]==p:
+        return True
+board=[[''] for i in range(3)]
+print('WELCOME TO GAME,TIC TAC TOE')
+printboard(board)
+print('Player - X and O')
+current='x'
+while True:
+    print('CURRENT PLAYER IS:',current)
+    print('enter the dimensions')
+    x,y=map(int,input().split())
+    if -1<x<3 and -1<y<3:
+        if board[x][y]=="":
+            board[x][y]==current
+        printboard(board)
+        if check(current,board):
+            print('congrats',current,'wins')
+            break
+        if isfull(board):
+            print('game is draw')
+            break
+        if current=='x':
+            current='O'
+        else:
+            current='x'
+    else:
+        print('GIVE A VALID NUMBER')
