@@ -1,0 +1,15 @@
+import random
+user=int(input('enter ur choice ROCK-0 PAPER-1 SCISSOR-2: '))
+comp=random.randint(0,2)
+print('computer choice : ')
+print(comp)
+if user==comp:
+    print('ITS A DRAW, GAME OVER ')
+elif user==2 and comp==0:
+    print('COMPUTER WINS')
+elif user==0 and comp==2:
+    print('CONGO!!!,YOU WON')
+elif user>comp:
+        print('CONGO!!!,YOU WON')
+elif comp>user:
+        print('COMPUTER WINS')
