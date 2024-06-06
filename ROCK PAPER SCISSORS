@@ -1,15 +1,21 @@
 import random
+symbols=['ROCK','PAPER','SCISSORS']
 user=int(input('enter ur choice ROCK-0 PAPER-1 SCISSOR-2: '))
-comp=random.randint(0,2)
-print('computer choice : ')
-print(comp)
-if user==comp:
-    print('ITS A DRAW, GAME OVER ')
-elif user==2 and comp==0:
-    print('COMPUTER WINS')
-elif user==0 and comp==2:
-    print('CONGO!!!,YOU WON')
-elif user>comp:
+print('USERS CHOICE :', symbols[user])
+if user>=3 and user<0:
+    print('PLEASE ENTER A VALID NUMBER')
+else:
+    # print(symbols[user])
+    comp=random.randint(0,2)
+    print('computer choice : ',symbols[comp])
+    # print(comp)
+    if user==comp:
+        print('ITS A DRAW, GAME OVER ')
+    elif user==2 and comp==0:
+        print('COMPUTER WINS')
+    elif user==0 and comp==2:
         print('CONGO!!!,YOU WON')
-elif comp>user:
+    elif user>comp:
+        print('CONGO!!!,YOU WON')
+    elif comp>user:
         print('COMPUTER WINS')
